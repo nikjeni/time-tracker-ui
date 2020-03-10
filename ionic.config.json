@@ -1,5 +1,7 @@
 {
   "name": "time-tracker-app",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

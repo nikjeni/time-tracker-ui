@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-button color="primary" (click)="logout()">Logout</ion-button>
+  </ion-toolbar>
+</ion-header>
+<ion-card>
+  <ion-item>
+    {{time}}
+  </ion-item>
+</ion-card>
+<ion-card>
+  <ion-item class="ion-activated">
+    <ion-icon name="walk" slot="start"></ion-icon>
+    <ion-label>In</ion-label>
+    <ion-button color="primary" (click)="inTime()" [disabled]="startStatus">In</ion-button>
+  </ion-item>
+
+  <ion-item class="ion-activated">
+    <ion-segment color="secondary">
+      <ion-segment-button value="lunch" (click)="segmentButtonClicked('lunch')">
+        <ion-icon name="pizza"></ion-icon>
+      </ion-segment-button>
+      <ion-segment-button value="breakfast" (click)="segmentButtonClicked('breakfast')">
+        <ion-icon name="cafe"></ion-icon>
+      </ion-segment-button>
+      <ion-segment-button value="shortbreak" (click)="segmentButtonClicked('shortbreak')">
+        <ion-icon name="walk"></ion-icon>
+      </ion-segment-button>
+    </ion-segment>
+  </ion-item>
+
+  <ion-item class="ion-activated">
+    <ion-icon name="bicycle" slot="start"></ion-icon>
+    <ion-label>Out</ion-label>
+    <ion-button color="danger" (click)="outTime()" [disabled]="endTimeStatus">Out</ion-button>
+  </ion-item>
+</ion-card>
