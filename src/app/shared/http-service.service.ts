@@ -7,8 +7,8 @@ import { forkJoin } from 'rxjs';
   providedIn: 'root'
 })
 export class HttpServiceService {
-  userUrl = "https://time-tracker-tns-core.herokuapp.com/users";
-  timeUrl = "https://time-tracker-tns-core.herokuapp.com/time";
+  userUrl = "https://timetrackercore.herokuapp.com/users";
+  timeUrl = "https://timetrackercore.herokuapp.com/time";
 
   constructor(private http: HttpClient) { }
 

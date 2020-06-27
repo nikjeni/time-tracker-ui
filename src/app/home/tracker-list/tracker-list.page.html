@@ -12,26 +12,26 @@
   <ion-item class="ion-activated">
     <ion-icon name="walk" slot="start"></ion-icon>
     <ion-label>In</ion-label>
-    <ion-button color="primary" (click)="inTime()" [disabled]="startStatus">In</ion-button>
+    <ion-button type="button" mode="md" color="primary" (click)="inTime()" [disabled]="startStatus">In</ion-button>
   </ion-item>
 
   <ion-item class="ion-activated">
-    <ion-segment color="secondary">
-      <ion-segment-button value="lunch" (click)="segmentButtonClicked('lunch')">
-        <ion-icon name="pizza"></ion-icon>
+    <ion-segment color="secondary" (click)="segmentButtonClicked($event)">
+      <ion-segment-button *ngFor="let btn of ionSegmenetBtn" [value]="btn.id">
+        <ion-icon [name]="btn.icon"></ion-icon>
       </ion-segment-button>
-      <ion-segment-button value="breakfast" (click)="segmentButtonClicked('breakfast')">
+      <!-- <ion-segment-button value="breakfast" (click)="segmentButtonClicked('breakfast')">
         <ion-icon name="cafe"></ion-icon>
       </ion-segment-button>
       <ion-segment-button value="shortbreak" (click)="segmentButtonClicked('shortbreak')">
         <ion-icon name="walk"></ion-icon>
-      </ion-segment-button>
+      </ion-segment-button> -->
     </ion-segment>
   </ion-item>
 
   <ion-item class="ion-activated">
     <ion-icon name="bicycle" slot="start"></ion-icon>
     <ion-label>Out</ion-label>
-    <ion-button color="danger" (click)="outTime()" [disabled]="endTimeStatus">Out</ion-button>
+    <ion-button color="danger" (ionFocus)="outTime()" [disabled]="endTimeStatus">Out</ion-button>
   </ion-item>
 </ion-card>

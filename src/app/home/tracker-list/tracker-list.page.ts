@@ -26,6 +26,7 @@ export class TrackerListPage implements OnInit {
   startStatus: any = false;
   endTimeStatus: any = true;
   actualtime = {};
+  ionSegmenetBtn = [{ id: 'lunch', icon: 'pizza' }, { id: 'breakfast', icon: 'cafe' }, { id: 'shortbreak', icon: 'walk' }];
 
   constructor(private modelCtrl: ModalController, private actionAlert: ActionControllerService, private router: Router, private broadcastService: EventService, private httpService: HttpServiceService) {
     this.broadcastService.events.subscribe((res) => {
@@ -107,7 +108,8 @@ export class TrackerListPage implements OnInit {
   }
 
   async segmentButtonClicked(env: any) {
-    this.actualtime["type"] = env;
+    console.log(env);
+    this.actualtime["type"] = env.target.value;
     var res = this.actionAlert.presentActionSheet();
     var show = await res;
     show.present();
