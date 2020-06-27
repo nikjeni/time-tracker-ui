@@ -8,6 +8,32 @@
     {{time}}
   </ion-item>
 </ion-card>
+<ion-fab vertical="center" horizontal="center" slot="fixed">
+  <ion-fab-button>
+    <ion-icon name="share"></ion-icon>
+  </ion-fab-button>
+  <ion-fab-list side="top">
+    <ion-fab-button>
+      <ion-icon name="pizza" (click)="segmentButtonClicked('lunch')"></ion-icon>
+    </ion-fab-button>
+  </ion-fab-list>
+  <ion-fab-list side="bottom">
+    <ion-fab-button>
+      <ion-icon name="cafe" (click)="segmentButtonClicked('breakfast')"></ion-icon>
+    </ion-fab-button>
+  </ion-fab-list>
+  <ion-fab-list side="start">
+    <ion-fab-button>
+      <ion-icon name="walk" (click)="segmentButtonClicked('shortbreak')"></ion-icon>
+    </ion-fab-button>
+  </ion-fab-list>
+  <!-- <ion-fab-list side="end">
+    <ion-fab-button>
+      <ion-icon name="logo-twitter"></ion-icon>
+    </ion-fab-button>
+  </ion-fab-list> -->
+</ion-fab>
+
 <ion-card>
   <ion-item class="ion-activated">
     <ion-icon name="walk" slot="start"></ion-icon>
@@ -15,19 +41,20 @@
     <ion-button type="button" mode="md" color="primary" (click)="inTime()" [disabled]="startStatus">In</ion-button>
   </ion-item>
 
-  <ion-item class="ion-activated">
-    <ion-segment color="secondary" (click)="segmentButtonClicked($event)">
-      <ion-segment-button *ngFor="let btn of ionSegmenetBtn" [value]="btn.id">
-        <ion-icon [name]="btn.icon"></ion-icon>
+
+  <!-- <ion-toolbar>
+    <ion-segment color="secondary" (ionChange)="segmentButtonClicked($event)">
+      <ion-segment-button value="lunch">
+        <ion-icon name="pizza"></ion-icon>
       </ion-segment-button>
-      <!-- <ion-segment-button value="breakfast" (click)="segmentButtonClicked('breakfast')">
+      <ion-segment-button value="breakfast">
         <ion-icon name="cafe"></ion-icon>
       </ion-segment-button>
-      <ion-segment-button value="shortbreak" (click)="segmentButtonClicked('shortbreak')">
+      <ion-segment-button value="shortbreak">
         <ion-icon name="walk"></ion-icon>
-      </ion-segment-button> -->
+      </ion-segment-button>
     </ion-segment>
-  </ion-item>
+  </ion-toolbar> -->
 
   <ion-item class="ion-activated">
     <ion-icon name="bicycle" slot="start"></ion-icon>

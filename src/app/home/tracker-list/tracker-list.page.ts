@@ -109,7 +109,7 @@ export class TrackerListPage implements OnInit {
 
   async segmentButtonClicked(env: any) {
     console.log(env);
-    this.actualtime["type"] = env.target.value;
+    this.actualtime["type"] = env;
     var res = this.actionAlert.presentActionSheet();
     var show = await res;
     show.present();
